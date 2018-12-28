@@ -1,0 +1,19 @@
+{% load static %}
+
+<!doctype html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'pdb_app/style.css' %}">
+
+        {% block head %}
+        {% endblock %}
+    </head>
+    <body>
+        <h1>Programming Database</h1>
+        <hr>
+        <br>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

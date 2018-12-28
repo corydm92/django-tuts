@@ -1,0 +1,21 @@
+{% extends 'pdb_app/base.html' %}
+
+{% block head %}
+    <title>Home - Programming Database</title>
+{% endblock %}
+
+{% block body %}
+
+    {% for category in categories %}
+        <h2>{{ category.name }}</h2>
+        {% for item in category.item_set.all %}
+            <a href="{% url 'pdb_app:item' item.id %}">{{ item.name }}</a>
+        {% endfor %}
+        <br>
+    {% endfor %}
+
+    {% comment %} {% for item in items %}
+        <a href="{% url 'pdb_app:item' item.id %}">{{ item.name }}</a>
+    {% endfor %} {% endcomment %}
+
+{% endblock %}
